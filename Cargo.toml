@@ -15,6 +15,10 @@ include = ["src", "LICENSE", "Makefile", "systemd"]
 platforms = ["*-unknown-linux-gnu"]
 tier = "2"
 
+[features]
+default = []
+systemd-boot = []
+
 [[bin]]
 name = "bootupd"
 path = "src/main.rs"

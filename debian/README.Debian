@@ -1,0 +1,6 @@
+coreos-bootupd for Debian
+
+This was packaged in order to support projects such as debian-bootc
+from https://github.com/bootcrew/debian-bootc
+
+ -- Noah Meyerhans <noahm@debian.org>, Fri, 12 Sep 2025 11:48:57 -0400

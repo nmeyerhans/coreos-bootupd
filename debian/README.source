@@ -1,0 +1,10 @@
+coreos-bootupd for Debian
+
+Note that many dependencies are currently missing from Debian. This
+package currently only builds when using the upstream-cargo build
+profile, which reaches out to crates.io for dependencies during
+package build and thus results in builds that are not suitable for
+inclusion directly in Debian.  Help packaging dependencies would be
+greatly appreciated.
+
+ -- Noah Meyerhans <noahm@debian.org>  Fri, 12 Sep 2025 11:28:38 -0400

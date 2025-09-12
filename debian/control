@@ -1,0 +1,71 @@
+Source: coreos-bootupd
+Section: admin
+Priority: optional
+Maintainer: Noah Meyerhans <noahm@debian.org>
+Build-Depends:
+ debhelper-compat (= 13),
+ rustup <upstream-cargo>,
+ cargo:native <!upstream-cargo>,
+ rustc:native (>= 1.84.1) <!upstream-cargo>,
+ libstd-rust-dev <!upstream-cargo>,
+ librust-anyhow-1+default-dev <!upstream-cargo>,
+ librust-bincode-1+default-dev (>= 1.3.2-~~) <!upstream-cargo>,
+ librust-bootc-internal-blockdev-0.0+default-dev <!upstream-cargo>,
+ librust-bootc-internal-blockdev-0.0+default-dev (<< 0.0.1-~~) <!upstream-cargo>,
+ librust-bootc-internal-utils-0.0+default-dev <!upstream-cargo>,
+ librust-bootc-internal-utils-0.0+default-dev (<< 0.0.1-~~) <!upstream-cargo>,
+ librust-camino-1+default-dev (>= 1.1.11-~~) <!upstream-cargo>,
+ librust-cap-std-ext-4+default-dev (>= 4.0.6-~~) <!upstream-cargo>,
+ librust-chrono-0.4+default-dev (>= 0.4.41-~~) <!upstream-cargo>,
+ librust-chrono-0.4+serde-dev (>= 0.4.41-~~) <!upstream-cargo>,
+ librust-clap-4+cargo-dev (>= 4.5-~~) <!upstream-cargo>,
+ librust-clap-4+derive-dev (>= 4.5-~~) <!upstream-cargo>,
+ librust-clap-4+help-dev (>= 4.5-~~) <!upstream-cargo>,
+ librust-clap-4+std-dev (>= 4.5-~~) <!upstream-cargo>,
+ librust-clap-4+suggestions-dev (>= 4.5-~~) <!upstream-cargo>,
+ librust-clap-4+usage-dev (>= 4.5-~~) <!upstream-cargo>,
+ librust-env-logger-0.11+default-dev <!upstream-cargo>,
+ librust-fail-0.5+default-dev <!upstream-cargo>,
+ librust-fail-0.5+failpoints-dev <!upstream-cargo>,
+ librust-fn-error-context-0.2+default-dev (>= 0.2.1-~~) <!upstream-cargo>,
+ librust-fs2-0.4+default-dev (>= 0.4.3-~~) <!upstream-cargo>,
+ librust-hex-0.4+default-dev (>= 0.4.3-~~) <!upstream-cargo>,
+ librust-libc-0.2+default-dev <!upstream-cargo>,
+ librust-libsystemd+default-dev (<< 0.8-~~) <!upstream-cargo>,
+ librust-libsystemd+default-dev (>= 0.3-~~) <!upstream-cargo>,
+ librust-log-0.4+default-dev <!upstream-cargo>,
+ librust-openat-0.1+default-dev (>= 0.1.20-~~) <!upstream-cargo>,
+ librust-openat-ext-0.2+default-dev (>= 0.2.2-~~) <!upstream-cargo>,
+ librust-openssl-0.10+default-dev <!upstream-cargo>,
+ librust-os-release-0.1+default-dev <!upstream-cargo>,
+ librust-regex-1+default-dev (>= 1.11.1-~~) <!upstream-cargo>,
+ librust-rpm-0.16-dev (>= 0.16.1-~~) <!upstream-cargo>,
+ librust-rustix-1+default-dev (>= 1.0.8-~~) <!upstream-cargo>,
+ librust-rustix-1+fs-dev (>= 1.0.8-~~) <!upstream-cargo>,
+ librust-rustix-1+process-dev (>= 1.0.8-~~) <!upstream-cargo>,
+ librust-serde-1+default-dev <!upstream-cargo>,
+ librust-serde-1+derive-dev <!upstream-cargo>,
+ librust-serde-json-1+default-dev <!upstream-cargo>,
+ librust-signal-hook-registry-1+default-dev (>= 1.4.6-~~) <!upstream-cargo>,
+ librust-tempfile-3+default-dev (>= 3.20-~~) <!upstream-cargo>,
+ librust-walkdir-2+default-dev (>= 2.3.2-~~) <!upstream-cargo>,
+ librust-widestring-1+default-dev (>= 1.2.0-~~) <!upstream-cargo>,
+Standards-Version: 4.7.0
+Homepage: https://github.com/nmeyerhans/coreos-bootupd
+Rules-Requires-Root: no
+#Vcs-Git: https://salsa.debian.org/debian/coreos-bootupd.git
+#Vcs-Browser: https://salsa.debian.org/debian/coreos-bootupd
+
+Package: coreos-bootupd
+Architecture: any
+Multi-Arch: foreign
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Distribution-independent updates for bootloaders
+ The goal of this project is to be a cross-distribution, OS update
+ system agnostic tool to manage updates for things like:
+ .
+   /boot/efi
+   x86 BIOS MBR
+   Other architecture bootloaders

@@ -1,3 +1,9 @@
+coreos-bootupd (0.0.1-2) unstable; urgency=medium
+
+  * Enable the systemd-boot feature
+
+ -- Noah Meyerhans <noahm@debian.org>  Mon, 15 Sep 2025 16:17:31 -0400
+
 coreos-bootupd (0.0.1-1) unstable; urgency=low
 
   * Initial release.

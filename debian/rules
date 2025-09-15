@@ -9,7 +9,7 @@
 	dh $@
 
 override_dh_auto_build:
-	cargo build --release
+	cargo build --release --features systemd-boot
 
 execute_after_dh_auto_clean:
 	-rm -rf target
